@@ -1,0 +1,48 @@
+name:                researchr-booklet
+version:             0.1.0.0
+github:              ranjitjhala/researchr-booklet
+license:             MIT 
+author:              Ranjit Jhala 
+maintainer:          jhala@cs.ucsd.edu 
+copyright:           2017 Ranjit Jhala 
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Scripts used to generate schedule-tex file from researchr-exported XML.
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/githubuser/researchr-booklet#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  researchr-booklet-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - researchr-booklet
+
+tests:
+  researchr-booklet-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - researchr-booklet
