@@ -1,6 +1,8 @@
 module Main where
 
-import Lib
+import Text.Booklet.Types 
+import Text.Booklet.Parse 
+import Text.Booklet.Render 
 
 main :: IO ()
-main = someFunc
+main = putStrLn "Hello"
